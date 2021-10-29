@@ -193,6 +193,8 @@ func (cl *Client) getResponse(client_ver uCommandVersion) (apibuf, error) {
 				uStat, uVer, iReplySize, nbytes))
 	}
 
+        fmt.Println("Response size: ", nbytes)
+
 	switch uStat {
 	case StatusError:
 		return *rawanswer, errors.New(fmt.Sprintf("searchd error: %s", rawanswer.getString()))
